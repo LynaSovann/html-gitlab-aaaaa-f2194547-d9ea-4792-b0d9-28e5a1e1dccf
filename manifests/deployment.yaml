@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: html-gitlab-aaaaa-f2194547-d9ea-4792-b0d9-28e5a1e1dccf-container
-          image: pipejet/imlyna-html-gitlab-aaaaa:1
+          image: pipejet/imlyna-html-gitlab-aaaaa:2
           ports:
             - containerPort: 80
