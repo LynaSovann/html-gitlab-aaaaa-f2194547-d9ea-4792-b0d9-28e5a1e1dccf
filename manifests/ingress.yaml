@@ -1,0 +1,26 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: html-gitlab-aaaaa-f2194547-d9ea-4792-b0d9-28e5a1e1dccf-https-ingress
+  namespace: html-gitlab-aaaaa-f2194547-d9ea-4792-b0d9-28e5a1e1dccf
+  annotations:
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/use-regex: "true"
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  ingressClassName: nginx
+  tls:
+    - hosts:
+        - imlyna-html-gitlab-aaaaa.assessify.org
+      secretName: html-gitlab-aaaaa-f2194547-d9ea-4792-b0d9-28e5a1e1dccf-secret-tls
+  rules:
+    - host: imlyna-html-gitlab-aaaaa.assessify.org
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: html-gitlab-aaaaa-f2194547-d9ea-4792-b0d9-28e5a1e1dccf-service
+                port:
+                  number: 8092
