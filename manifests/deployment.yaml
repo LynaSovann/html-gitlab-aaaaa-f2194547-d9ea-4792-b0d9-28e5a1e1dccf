@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: html-gitlab-aaaaa-f2194547-d9ea-4792-b0d9-28e5a1e1dccf-deployment
+  labels:
+    app: html-gitlab-aaaaa-f2194547-d9ea-4792-b0d9-28e5a1e1dccf
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: html-gitlab-aaaaa-f2194547-d9ea-4792-b0d9-28e5a1e1dccf
+  template:
+    metadata:
+      labels:
+        app: html-gitlab-aaaaa-f2194547-d9ea-4792-b0d9-28e5a1e1dccf
+    spec:
+      containers:
+        - name: html-gitlab-aaaaa-f2194547-d9ea-4792-b0d9-28e5a1e1dccf-container
+          image: pipejet/imlyna-html-gitlab-aaaaa:0
+          ports:
+            - containerPort: 80
